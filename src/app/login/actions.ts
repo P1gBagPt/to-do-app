@@ -1,9 +1,8 @@
-'use server';
+"use client";
 
-import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 import { SignInFormData } from "@/types/auth";
 
 export async function loginAction(formData: SignInFormData) {
@@ -14,12 +13,11 @@ export async function loginAction(formData: SignInFormData) {
     password: formData.password,
   });
 
-  console.log("login nice", data)
+  console.log("login nice", data);
 
   if (error) {
     redirect("/error");
   }
 
-  revalidatePath("/", "layout");
   redirect("/");
 }

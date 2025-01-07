@@ -14,8 +14,6 @@ export async function signup(formData: SignupFormData) {
     password: formData.password,
   });
 
-  console.log(error);
-
   if (error) {
     redirect("/error");
   }

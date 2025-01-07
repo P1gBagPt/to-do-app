@@ -49,8 +49,6 @@ export function SignupForm({
   });
 
   const onSubmit: SubmitHandler<SignupFormData> = async (data) => {
-    console.log(data);
-    // Call your signup function here
     await signup(data);
   };
 

@@ -1,20 +1,18 @@
-'use server';
+"use server";
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/utils/supabase/server";
-import { SignInFormData } from "@/types/auth";
+import { SignupFormData } from "@/types/auth";
 
-export async function loginAction(formData: SignInFormData) {
+export async function signup(formData: SignupFormData) {
   const supabase = await createClient();
 
-  const { data, error } = await supabase.auth.signInWithPassword({
+  const { error } = await supabase.auth.signUp({
     email: formData.email,
     password: formData.password,
   });
-
-  console.log("login nice", data)
 
   if (error) {
     redirect("/error");

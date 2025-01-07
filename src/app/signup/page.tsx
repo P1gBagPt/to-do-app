@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect } from "react";
+import { SignupForm } from "@/components/signup-form";
 import { createClient } from "@/utils/supabase/client";
-import { LoginForm } from "@/components/login-form";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Login() {
+export default function SignUp() {
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Login() {
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">
-        <LoginForm />
+        <SignupForm />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react"; // Add Suspense import
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/utils/supabase/client";
 
@@ -53,4 +53,11 @@ const ConfirmEmailPage = () => {
   );
 };
 
-export default ConfirmEmailPage;
+// Wrap ConfirmEmailPage with Suspense
+export default function SuspendedConfirmEmailPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ConfirmEmailPage />
+    </Suspense>
+  );
+}

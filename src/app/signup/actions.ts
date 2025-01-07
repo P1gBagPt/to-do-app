@@ -1,9 +1,8 @@
-"use server";
+"use client";
 
-import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 import { SignupFormData } from "@/types/auth";
 
 export async function signup(formData: SignupFormData) {
@@ -18,6 +17,5 @@ export async function signup(formData: SignupFormData) {
     redirect("/error");
   }
 
-  revalidatePath("/", "layout");
   redirect("/");
 }

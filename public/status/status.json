@@ -1,0 +1,30 @@
+{
+    "status": [
+      {
+        "id": 1,
+        "name": "Pending",
+        "color": "#f59e0b"
+      },
+      {
+        "id": 2,
+        "name": "In Progress",
+        "color": "#3b82f6"
+      },
+      {
+        "id": 3,
+        "name": "Completed",
+        "color": "#10b981"
+      },
+      {
+        "id": 4,
+        "name": "On Hold",
+        "color": "#d97706"
+      },
+      {
+        "id": 5,
+        "name": "Canceled",
+        "color": "#ef4444"
+      }
+    ]
+  }
+  
